@@ -1,0 +1,57 @@
+// Стили для компонентов
+.container {
+    margin: 0 auto;
+    padding: 0 $container-offset;
+    max-width: $container-width;
+  }
+  
+  .container-fluid {
+    margin: 0 auto;
+    padding: 0 $container-offset;
+    max-width: $container-fluid-width;
+  }
+  
+  .section-offset {
+    padding: 120px 0;
+  
+    @include mobile {
+      padding: 80px 0;
+    }
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 25px 30px;
+    min-width: 260px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    text-align: center;
+    color: $light-color;
+    background-color: $accent-color;
+  
+    &--dark {
+      background-color: $dark-color;
+    }
+  }
+  
+  .section-title {
+    margin: 0;
+    margin-bottom: 60px;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 160%;
+    color: $dark-color;
+  
+    @include high-desktop {
+      line-height: 60px;
+    }
+  
+    @include mobile {
+      font-size: 31px;
+      line-height: 42px;
+    }
+  }
