@@ -1,0 +1,110 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+
+.tariffs {
+  padding-top: 0;
+
+  &__list {
+    @include mix.grid(12);
+    & {
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: span 4;
+    border: 1px solid rgba(20, 16, 36, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+
+    &--current {
+      border: 1px solid vars.$dark-color;
+      background-color: vars.$dark-color;
+      transform: scale(1.1);
+
+      .tariffs__subtitle,
+      .tariffs__price,
+      .tariffs__descr {
+        color: vars.$light-color;
+      }
+
+      @media (max-width: 1200px) {
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      grid-column: span 8;
+    }
+  }
+
+  &__subtitle {
+    display: flex;
+    align-items: center;
+    margin: 0 0 60px;
+    font: {
+      weight: 600;
+      size: 30px;
+    }
+    line-height: 160%;
+    text-align: center;
+    color: vars.$dark-color;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      margin: 0 10px;
+      width: 20px;
+      height: 3px;
+      background-color: currentColor;
+    }
+  }
+
+  &__price {
+    margin-bottom: 20px;
+    font: {
+      weight: 600;
+      size: 50px;
+    }
+    line-height: 160%;
+    text-align: center;
+    color: vars.$dark-color;
+
+    @media (max-width: 1200px) {
+      font-size: 45px;
+    }
+
+    @include mix.media-tablet {
+      font-size: 32px;
+    }
+  }
+
+  &__descr {
+    margin: 0 0 auto;
+    font: {
+      weight: 400;
+      size: 18px;
+    }
+    line-height: 160%;
+    text-align: center;
+    color: vars.$dark-color;
+  }
+
+  &__btn {
+    margin-top: 60px;
+    min-width: 100%;
+
+    @include mix.media-tablet {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  }
+}

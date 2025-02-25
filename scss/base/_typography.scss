@@ -1,0 +1,54 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+
+@font-face {
+  font-family: "Jost";
+  src: url("../fonts/JostRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jost";
+  src: url("../fonts/JostSemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jost";
+  src: url("../fonts/JostBold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+.section-title {
+  margin: 0 0 60px;
+  font: {
+    weight: 600;
+    size: 50px;
+  }
+  line-height: 160%;
+  color: vars.$dark-color;
+
+  @include mix.media-tablet {
+    line-height: 60px;
+  }
+
+  @include mix.media-mobile {
+    font-size: 31px;
+    line-height: 42px;
+  }
+}
+
+.phone {
+  font: {
+    weight: 600;
+    size: 30px;
+  }
+  line-height: 160%;
+  color: vars.$light-color;
+}

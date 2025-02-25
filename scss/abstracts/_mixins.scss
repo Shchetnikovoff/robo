@@ -1,0 +1,21 @@
+@mixin grid($columns) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: 40px;
+  
+    @media (max-width: 576px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @mixin media-tablet {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+  
+  @mixin media-mobile {
+    @media (max-width: 576px) {
+      @content;
+    }
+  }

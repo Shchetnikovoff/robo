@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+
+.hero {
+  padding-top: 160px;
+  min-height: 800px;
+  background-color: vars.$dark-color;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    max-width: 516px;
+
+    @include mix.media-tablet {
+      max-width: none;
+    }
+  }
+
+  &__image {
+    transform: translateX(167px);
+
+    @include mix.media-tablet {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin: 0 0 50px;
+    font: {
+      weight: 600;
+      size: 70px;
+    }
+    line-height: 160%;
+    text-transform: uppercase;
+    color: vars.$light-color;
+
+    &-text {
+      display: block;
+      max-width: 90%;
+      font: {
+        weight: 400;
+        size: 20px;
+      }
+      text-transform: initial;
+    }
+  }
+
+  @include mix.media-tablet {
+    padding-bottom: 100px;
+    min-height: auto;
+  }
+}

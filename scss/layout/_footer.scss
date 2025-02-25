@@ -1,0 +1,37 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+
+.footer {
+  padding: 40px 0;
+  background-color: vars.$dark-color;
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include mix.media-mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  &__copy {
+    font: {
+      weight: 400;
+      size: 16px;
+    }
+    line-height: 160%;
+    color: rgba(vars.$light-color, 0.7);
+
+    @include mix.media-mobile {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  }
+}

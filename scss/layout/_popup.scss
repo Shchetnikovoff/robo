@@ -1,0 +1,186 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+
+.graph-modal {
+  &__close {
+    right: 40px;
+    top: 40px;
+    width: auto;
+    height: auto;
+    font: {
+      weight: 400;
+      size: 18px;
+    }
+    line-height: 160%;
+    color: vars.$text-color;
+
+    @include mix.media-mobile {
+      right: 20px;
+      top: 20px;
+    }
+  }
+}
+
+.popup {
+  padding: 40px;
+  width: 100%;
+  max-width: 940px;
+
+  &__top {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  &__image {
+    margin-right: 40px;
+
+    @include mix.media-mobile {
+      margin-right: 20px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    font: {
+      weight: 600;
+      size: 24px;
+    }
+    line-height: 160%;
+    color: vars.$dark-color;
+  }
+
+  &__post {
+    margin-bottom: 10px;
+    font: {
+      weight: 400;
+      size: 18px;
+    }
+    line-height: 160%;
+    color: vars.$text-color;
+  }
+
+  &__bottom-content {
+    padding: {
+      top: 20px;
+      right: 20px;
+    }
+    max-height: 375px;
+  }
+
+  &__descr {
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    margin: 0 0 5px;
+    font: {
+      weight: 400;
+      size: 20px;
+    }
+    line-height: 160%;
+    color: vars.$dark-color;
+  }
+
+  &__subtitle {
+    margin: 0 0 20px;
+    font: {
+      weight: 600;
+      size: 24px;
+    }
+    line-height: 160%;
+    color: vars.$dark-color;
+  }
+
+  .simplebar-track.simplebar-vertical {
+    border-radius: 40px;
+    margin: 20px 0;
+    width: 5px;
+    background: rgba(20, 16, 36, 0.08);
+  }
+
+  .simplebar-scrollbar::before {
+    left: 0;
+    right: 0;
+    border-radius: 40px;
+    width: 5px;
+    background-color: vars.$dark-color;
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 80px;
+  }
+
+  @include mix.media-mobile {
+    padding: 20px;
+    padding-top: 40px;
+  }
+}
+
+.tabs {
+  &__menu {
+    border-bottom: 1px solid rgba(20, 16, 36, 0.11);
+    padding-bottom: 20px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 70%;
+
+    @include mix.media-mobile {
+      flex-wrap: wrap;
+
+      &-item {
+        margin: {
+          right: 40px;
+          bottom: 20px;
+        }
+      }
+    }
+  }
+
+  &__nav-btn {
+    font: {
+      weight: 400;
+      size: 20px;
+    }
+    line-height: 160%;
+    color: vars.$dark-color;
+
+    &:focus {
+      color: vars.$accent-color;
+      background-color: transparent;
+    }
+
+    &--active {
+      outline: none;
+      color: vars.$accent-color;
+      background-color: transparent;
+    }
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__link {
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: vars.$dark-color;
+      object-fit: cover;
+    }
+  }
+}

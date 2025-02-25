@@ -1,20 +1,11 @@
 {
-  "name": "robo",
+  "name": "project",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "sass scss/main.scss css/main.css"
+    "compile:sass": "sass scss/main.scss css/style.css"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vitebskiy/Site-layout--robo-school-.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vitebskiy/Site-layout--robo-school-/issues"
-  },
-  "homepage": "https://github.com/vitebskiy/Site-layout--robo-school-#readme",
   "description": ""
 }

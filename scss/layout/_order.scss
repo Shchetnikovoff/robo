@@ -1,0 +1,69 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+
+.order {
+  background: {
+    image: url("../img/percents.png");
+    image: image-set(
+      url("../img/percents.avif") type("image/avif"),
+      url("../img/percents.webp") type("image/webp"),
+      url("../img/percents.jpg") type("image/jpg")
+    );
+    size: cover;
+    position: bottom center;
+  }
+  padding: 87px 0;
+  background-color: vars.$accent-color;
+
+  &__container {
+    @include mix.grid(12);
+  }
+
+  &__left {
+    grid-column: span 5;
+    padding-left: 60px;
+
+    @include mix.media-tablet {
+      grid-column: span 12;
+      margin-bottom: 30px;
+      padding-left: 0;
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    font: {
+      weight: 600;
+      size: 36px;
+    }
+    line-height: 130%;
+    color: vars.$light-color;
+  }
+
+  &__descr {
+    margin: 0;
+    font: {
+      weight: 400;
+      size: 20px;
+    }
+    line-height: 130%;
+    color: vars.$light-color;
+  }
+
+  &__right {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: span 7;
+    padding-right: 60px;
+
+    @include mix.media-tablet {
+      justify-content: flex-start;
+      grid-column: span 12;
+      padding-right: 0;
+    }
+  }
+
+  &__form {
+    max-width: 500px;
+  }
+}

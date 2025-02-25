@@ -1,0 +1,43 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+
+.benefits {
+  background-color: #f9f9f9;
+
+  &__list {
+    @include mix.grid(12);
+
+    &__item {
+      grid-column: span 4;
+
+      @media (max-width: 1200px) {
+        grid-column: span 6;
+      }
+
+      @include mix.media-mobile {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  &__subtitle {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0 20px;
+    font: {
+      weight: 600;
+      size: 24px;
+    }
+    line-height: 160%;
+    color: vars.$dark-color;
+  }
+
+  &__descr {
+    font: {
+      weight: 400;
+      size: 18px;
+    }
+    line-height: 160%;
+    color: vars.$text-color;
+  }
+}

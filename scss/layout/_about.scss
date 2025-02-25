@@ -1,0 +1,56 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+
+.about {
+  background-color: vars.$light-color;
+
+  &__descr {
+    margin: 0 0 60px;
+    max-width: 892px;
+    font: {
+      weight: 400;
+      size: 30px;
+    }
+    line-height: 160%;
+    color: vars.$dark-color;
+
+    &-highlight {
+      font-weight: 600;
+    }
+  }
+
+  &__list {
+    @include mix.grid(12);
+
+    &__item {
+      grid-column: span 3;
+
+      @media (max-width: 1200px) {
+        grid-column: span 6;
+      }
+
+      @include mix.media-mobile {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  &__digit {
+    font: {
+      weight: 600;
+      size: 70px;
+    }
+    line-height: 160%;
+    color: vars.$accent-color;
+  }
+
+  &__text {
+    margin: 0;
+    font: {
+      weight: 400;
+      size: 18px;
+    }
+    line-height: 160%;
+    color: vars.$text-color;
+  }
+}

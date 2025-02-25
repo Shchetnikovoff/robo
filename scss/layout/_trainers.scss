@@ -1,0 +1,103 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+
+.trainers {
+  &__wrapper {
+    padding-left: max(15px, (100% - vars.$content-width) / 2);
+  }
+
+  &__content {
+    margin-bottom: 75px;
+
+    .swiper-slide {
+      width: 360px;
+
+      @media (max-width: 768px) {
+        width: 220px;
+      }
+    }
+
+    .swiper-scrollbar-drag {
+      background-color: vars.$dark-color;
+    }
+  }
+
+  &__image {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    max-height: 500px;
+  }
+
+  &__name {
+    margin: 0 0 10px;
+    font: {
+      weight: 600;
+      size: 24px;
+    }
+    line-height: 160%;
+    color: vars.$dark-color;
+  }
+
+  &__post {
+    margin: 0 0 20px;
+    font: {
+      weight: 400;
+      size: 18px;
+    }
+    line-height: 160%;
+    color: vars.$text-color;
+  }
+
+  &__btn {
+    font: {
+      weight: 400;
+      size: 18px;
+    }
+    line-height: 160%;
+    color: vars.$accent-color;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__scroll {
+    border-radius: 40px;
+    width: 360px;
+    height: 5px;
+    background: rgba(20, 16, 36, 0.08);
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+
+    @include mix.media-mobile {
+      display: none;
+    }
+  }
+
+  &__slider-btn {
+    background: {
+      position: center;
+      size: cover;
+      repeat: no-repeat;
+    }
+    width: 40px;
+    height: 40px;
+
+    &--prev {
+      background-image: url("../img/prev.svg");
+    }
+
+    &--next {
+      background-image: url("../img/next.svg");
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
